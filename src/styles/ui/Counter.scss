@@ -1,0 +1,25 @@
+@use "../abstracts" as *;
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $light-grayish-blue;
+  padding-block: 1.5rem;
+  padding-inline: 1.5rem;
+  border-radius: 14px;
+
+  &__buttons {
+    border: none;
+    background: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    img {
+      display: block;
+    }
+  }
+
+  &__value {
+    font-weight: 700;
+  }
+}
