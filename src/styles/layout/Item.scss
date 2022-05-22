@@ -1,0 +1,39 @@
+@use "../abstracts" as *;
+
+.item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  &__image {
+    display: block;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 4px;
+  }
+
+  &__details {
+    color: $dark-grayish-blue;
+    font-size: 1rem;
+    max-width: 62%;
+  }
+
+  &__name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__total {
+    font-weight: 700;
+    color: $black;
+  }
+
+  &__remove {
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    margin-left: auto;
+    cursor: pointer;
+  }
+}

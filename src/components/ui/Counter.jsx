@@ -1,17 +1,16 @@
 import "../../styles/ui/Counter.scss";
-import React, { useState } from "react";
+import React from "react";
 
 const clamp = (num, min, max) => {
   return Math.min(Math.max(num, min), max);
 };
 
 const Counter = ({
+  value,
+  setValue,
   minValue = 0,
-  initialValue = 0,
   maxValue = Number.MAX_VALUE,
 }) => {
-  const [value, setValue] = useState(initialValue);
-
   const incrementHandler = () => {
     setValue((prevValue) => clamp(minValue, prevValue + 1, maxValue));
   };
