@@ -3,6 +3,34 @@ import React, { useContext, useState } from "react";
 import Counter from "../ui/Counter";
 import Button from "../ui/Button";
 import CartContext from "../../store/cart-context";
+import ImageSlider from "../ui/ImageSlider";
+
+const DUMMY_SLIDES = [
+  {
+    id: 1,
+    imagePath: "./images/image-product-1.jpg",
+    thumbnailPath: "./images/image-product-1-thumbnail.jpg",
+    alt: "product 1",
+  },
+  {
+    id: 2,
+    imagePath: "./images/image-product-2.jpg",
+    thumbnailPath: "./images/image-product-2-thumbnail.jpg",
+    alt: "product 2",
+  },
+  {
+    id: 3,
+    imagePath: "./images/image-product-3.jpg",
+    thumbnailPath: "./images/image-product-3-thumbnail.jpg",
+    alt: "product 3",
+  },
+  {
+    id: 4,
+    imagePath: "./images/image-product-4.jpg",
+    thumbnailPath: "./images/image-product-4-thumbnail.jpg",
+    alt: "product 4",
+  },
+];
 
 const initialProduct = {
   id: 491,
@@ -38,9 +66,10 @@ const Product = ({ product = initialProduct }) => {
 
   return (
     <section className="product">
-      <div className="product__display">
+      {/* <div className="product__display">
         <img src={product.imagePath} alt="" />
-      </div>
+      </div> */}
+      <ImageSlider slides={DUMMY_SLIDES} />
       <div className="product__details">
         <h4 className="product__company">{product.company}</h4>
         <h1 className="product__name">{product.name}</h1>
