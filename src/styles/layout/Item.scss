@@ -14,7 +14,6 @@
 
   &__details {
     color: $dark-grayish-blue;
-    font-size: 1rem;
     max-width: 62%;
   }
 
@@ -25,7 +24,7 @@
   }
 
   &__total {
-    font-weight: 700;
+    font-weight: $fw-700;
     color: $black;
   }
 
@@ -35,5 +34,11 @@
     padding: 0.25rem;
     margin-left: auto;
     cursor: pointer;
+    &:hover {
+      img {
+        filter: invert(75%) sepia(41%) saturate(704%) hue-rotate(322deg)
+          brightness(0%) contrast(98%);
+      }
+    }
   }
 }

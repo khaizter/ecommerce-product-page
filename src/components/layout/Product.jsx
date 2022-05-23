@@ -50,13 +50,12 @@ const Product = ({ product = initialProduct }) => {
   const [quantity, setQuantity] = useState(0);
 
   const addToCartHandler = () => {
-    if (quantity == 0) {
+    if (quantity === 0) {
       console.log("Can't add 0 quantity.");
       return;
     }
 
     cartCtx.addItem({
-      id: product.id,
       name: product.name,
       price: product.discountedPrice,
       imageThumbnailPath: product.imageThumbnailPath,
@@ -66,9 +65,6 @@ const Product = ({ product = initialProduct }) => {
 
   return (
     <section className="product">
-      {/* <div className="product__display">
-        <img src={product.imagePath} alt="" />
-      </div> */}
       <ImageSlider slides={DUMMY_SLIDES} />
       <div className="product__details">
         <h4 className="product__company">{product.company}</h4>
@@ -84,7 +80,11 @@ const Product = ({ product = initialProduct }) => {
           </div>
         </div>
         <div className="product__actions">
-          <Counter value={quantity} setValue={setQuantity} />
+          <Counter
+            className="product__quantity"
+            value={quantity}
+            setValue={setQuantity}
+          />
           <Button className="product__cta" onClick={addToCartHandler}>
             <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
               <path

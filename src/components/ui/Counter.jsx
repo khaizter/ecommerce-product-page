@@ -10,6 +10,7 @@ const Counter = ({
   setValue,
   minValue = 0,
   maxValue = Number.MAX_VALUE,
+  className,
 }) => {
   const incrementHandler = () => {
     setValue((prevValue) => clamp(minValue, prevValue + 1, maxValue));
@@ -20,7 +21,7 @@ const Counter = ({
   };
 
   return (
-    <div className="counter">
+    <div className={`counter ${className}`}>
       <button className="counter__buttons" onClick={decrementHandler}>
         <img src="./images/icon-minus.svg" alt="" />
       </button>

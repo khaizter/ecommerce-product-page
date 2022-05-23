@@ -1,9 +1,10 @@
+import "../../styles/layout/Main.scss";
 import React from "react";
 import Product from "./Product";
 
 const Main = () => {
   return (
-    <main>
+    <main className="main">
       <Product />
     </main>
   );

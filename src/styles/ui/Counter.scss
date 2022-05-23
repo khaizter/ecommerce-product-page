@@ -16,10 +16,17 @@
     cursor: pointer;
     img {
       display: block;
+      filter: invert(52%) sepia(58%) saturate(1809%) hue-rotate(348deg)
+        brightness(104%) contrast(101%);
+    }
+
+    &:hover img {
+      filter: invert(75%) sepia(41%) saturate(704%) hue-rotate(322deg)
+        brightness(106%) contrast(98%);
     }
   }
 
   &__value {
-    font-weight: 700;
+    font-weight: $fw-700;
   }
 }

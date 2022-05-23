@@ -2,25 +2,24 @@ import "../../styles/layout/Header.scss";
 import React from "react";
 import Menu from "./Menu";
 import Cart from "./Cart";
+import Navigation from "./Navigation";
 
 const Header = () => {
   return (
     <header className="header">
       <div className="header__left">
-        <Menu />
-        <img
-          src="./images/logo.svg"
-          alt="sneakers logo"
-          className="header__logo"
-        />
+        <Menu className="header__menu" />
+        <a href="#" className="header__logo">
+          <img src="./images/logo.svg" alt="sneakers logo" />
+        </a>
+
+        <Navigation className="header__navigation" />
       </div>
       <div className="header__right">
         <Cart />
-        <img
-          src="./images/image-avatar.png"
-          alt="avatar"
-          className="header__avatar"
-        />
+        <a href="#" className="header__avatar">
+          <img src="./images/image-avatar.png" alt="avatar" />
+        </a>
       </div>
     </header>
   );

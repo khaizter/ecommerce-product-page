@@ -5,20 +5,32 @@
     padding: 0;
     border: none;
     background: none;
+    background-color: white;
+    cursor: pointer;
+
+    &:hover img {
+      filter: invert(0%) sepia(0%) saturate(100%) hue-rotate(340deg)
+        brightness(0%) contrast(106%);
+    }
   }
 
   &__inventory {
-    position: fixed;
+    position: absolute;
     top: 4.5rem;
-    left: 0.5rem;
-    width: calc(100% - 1rem);
+    right: 0;
+    width: calc(100vw - 3rem);
     background-color: $white;
     border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    @media (min-width: 750px) {
+      top: 3.5rem;
+      width: 40rem;
+    }
   }
 
   &__heading {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: $fs-500;
     padding: 1.5rem;
     border-bottom: 1px solid $grayish-blue;
   }
@@ -28,13 +40,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // align-items: center;
     min-height: 11.25rem;
     gap: 1rem;
   }
 
   &__empty {
-    font-weight: 700;
+    font-weight: $fw-700;
     color: $dark-grayish-blue;
     text-align: center;
   }

@@ -1,8 +1,22 @@
+@use "../abstracts" as *;
+
 .image-slider {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1/1;
   z-index: 0;
+  max-width: 750px;
+  margin-inline: auto;
+
+  @media (min-width: 600px) {
+    padding: 1rem;
+  }
+
+  &__slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    @media (min-width: 600px) {
+      border-radius: 12px;
+    }
+  }
 
   &__slide {
     display: block;
@@ -11,8 +25,9 @@
     left: 0;
     height: 100%;
     width: 100%;
+    border-radius: inherit;
     opacity: 0;
-
+    transition: 0.3s ease-out;
     &--active {
       opacity: 1;
     }
@@ -26,23 +41,111 @@
     width: 2.8rem;
     height: 2.8rem;
     text-align: center;
-    z-index: 10;
+    z-index: 0;
     cursor: pointer;
+    top: calc(50% - 1.4rem);
+
+    &:hover {
+      img {
+        filter: invert(70%) sepia(85%) saturate(3919%) hue-rotate(347deg)
+          brightness(100%) contrast(102%);
+      }
+    }
 
     img {
       vertical-align: text-bottom;
     }
 
     &--previous {
-      top: 50%;
       left: 1rem;
       padding-right: 3px;
     }
 
     &--next {
-      top: 50%;
       right: 1rem;
       padding-left: 3px;
+    }
+    @media (min-width: 600px) {
+      display: none;
+
+      &--previous {
+        left: -1.5rem;
+      }
+
+      &--next {
+        right: -1.5rem;
+      }
+
+      &--light-box-mode {
+        display: block;
+      }
+    }
+  }
+
+  &__thumbnails {
+    display: none;
+    margin-top: 2rem;
+    gap: 2rem;
+
+    @media (min-width: 600px) {
+      display: flex;
+    }
+  }
+
+  &__thumbnail {
+    display: block;
+    padding: 0;
+    border-radius: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border: 3px solid transparent;
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: inherit;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.699);
+      img {
+        mix-blend-mode: lighten;
+      }
+    }
+
+    &--active {
+      border: 3px solid $orange;
+      background-color: rgba(255, 255, 255, 0.699);
+      img {
+        mix-blend-mode: lighten;
+      }
+    }
+  }
+
+  &__light-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: min(40%, 650px);
+    margin-inline: auto;
+  }
+
+  &__light-box-toggle {
+    display: block;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+    margin-right: 1rem;
+    width: 1.5rem;
+    img {
+      display: block;
+      width: 100%;
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(330deg)
+        brightness(104%) contrast(104%);
     }
   }
 }

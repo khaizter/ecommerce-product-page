@@ -1,3 +1,5 @@
+@use "../abstracts" as *;
+
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
 body {
@@ -8,11 +10,14 @@ body {
 h1,
 h2,
 h3 {
-  font-weight: 700;
+  font-weight: $fw-700;
 }
 
 p {
-  font-weight: 400;
+  font-weight: $fw-400;
+  @media (min-width: 1050px) {
+    font-size: $fs-500;
+  }
 }
 
 input,

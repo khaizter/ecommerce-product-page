@@ -1,3 +1,5 @@
+@use "../abstracts" as *;
+
 .header {
   display: flex;
   align-items: center;
@@ -8,6 +10,16 @@
   width: 100%;
   background-color: white;
   z-index: 1;
+  max-width: 1000px;
+  margin-inline: auto;
+
+  @media (min-width: 1000px) {
+    border-bottom: 1px solid $grayish-blue;
+    padding: 2rem 1rem;
+  }
+  @media (min-width: 1040px) {
+    padding: 2rem 0;
+  }
 
   &__left,
   &__right {
@@ -15,13 +27,45 @@
     align-items: center;
     gap: 1rem;
     position: relative;
+    @media (min-width: 770px) {
+      gap: 2rem;
+    }
   }
 
   &__left {
     z-index: 1;
   }
 
+  &__menu {
+    @media (min-width: 770px) {
+      display: none;
+    }
+  }
+
   &__logo {
+    transition: 0.3s ease-out;
+    img {
+      display: block;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__navigation {
+    display: none;
+    @media (min-width: 770px) {
+      display: block;
+      ul {
+        flex-direction: row;
+        gap: 2rem;
+      }
+      a {
+        color: $dark-grayish-blue;
+        font-weight: $fw-400;
+      }
+    }
   }
 
   &__cart {
@@ -31,6 +75,22 @@
   }
 
   &__avatar {
+    box-sizing: content-box;
     width: 32px;
+    display: block;
+    border-radius: 50%;
+    border: 2px solid transparent;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    &:hover {
+      border: 2px solid $orange;
+    }
+    @media (min-width: 770px) {
+      width: 48px;
+    }
   }
 }
