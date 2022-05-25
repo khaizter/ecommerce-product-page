@@ -7,6 +7,7 @@
     background: none;
     background-color: white;
     cursor: pointer;
+    position: relative;
 
     &:hover &-icon {
       color: $very-dark-blue;
@@ -15,12 +16,47 @@
     &--bump {
       animation: bump 0.3s ease-out forwards;
     }
+
+    // &::after {
+    //   content: "2";
+    //   position: absolute;
+    //   top: -5px;
+    //   right: -5px;
+    //   color: $white;
+    //   font-size: 0.5rem;
+    //   display: inline-block;
+    //   background-color: $orange;
+    //   width: 1rem;
+    //   height: 0.8rem;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   border-radius: 50%;
+    //   text-align: center;
+    // }
   }
 
   &__toggle-icon {
     display: block;
     color: $dark-grayish-blue;
     transition: all 0.4s ease-out;
+  }
+
+  &__item-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    color: $white;
+    font-size: 0.5rem;
+    display: inline-block;
+    background-color: $orange;
+    width: 1rem;
+    height: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-align: center;
   }
 
   &__inventory {

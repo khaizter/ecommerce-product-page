@@ -10,6 +10,7 @@ const Cart = () => {
   const [showCart, setShowCart] = useState(false);
   const [toggleIsBump, setToggleIsBump] = useState(false);
   const { items } = useContext(CartContext);
+  const itemCount = items.length;
 
   useEffect(() => {
     if (items.length === 0) return;
@@ -39,6 +40,9 @@ const Cart = () => {
         onClick={(e) => setShowCart((prevValue) => !prevValue)}
       >
         <CartIcon className="cart__toggle-icon" />
+        {itemCount !== 0 && (
+          <span className="cart__item-count">{itemCount}</span>
+        )}
       </button>
       <CSSTransition
         mountOnEnter
