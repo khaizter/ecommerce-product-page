@@ -2,6 +2,8 @@ import "../../styles/ui/ImageSlider.scss";
 import React, { Fragment, useState } from "react";
 import Modal from "./Modal";
 import useWindowSize from "../../hooks/useWindowSize";
+import PreviousIcon from "../icon/PreviousIcon";
+import NextIcon from "../icon/NextIcon";
 
 const ImageSlider = ({ slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -58,13 +60,13 @@ const ImageSlider = ({ slides }) => {
             className="image-slider__button image-slider__button--previous"
             onClick={prevSlideHandler}
           >
-            <img src="./images/icon-previous.svg" alt="previous" />
+            <PreviousIcon />
           </button>
           <button
             className="image-slider__button image-slider__button--next"
             onClick={nextSlideHandler}
           >
-            <img src="./images/icon-next.svg" alt="next" />
+            <NextIcon />
           </button>
         </div>
         <div className="image-slider__thumbnails">
@@ -94,7 +96,7 @@ const ImageSlider = ({ slides }) => {
             <img src="./images/icon-close.svg" alt="" />
           </button>
           <div className="image-slider">
-            <div className="image-slider__slider">
+            <div className="image-slider__slider" onClick={showLightBoxHandler}>
               {slides.map((slide, index) => {
                 return (
                   <img
@@ -110,16 +112,16 @@ const ImageSlider = ({ slides }) => {
                 );
               })}
               <button
-                className="image-slider__button image-slider__button--previous image-slider__button--light-box-mode"
+                className="image-slider__button image-slider__button--previous"
                 onClick={prevSlideHandler}
               >
-                <img src="./images/icon-previous.svg" alt="previous" />
+                <PreviousIcon />
               </button>
               <button
-                className="image-slider__button image-slider__button--next image-slider__button--light-box-mode "
+                className="image-slider__button image-slider__button--next"
                 onClick={nextSlideHandler}
               >
-                <img src="./images/icon-next.svg" alt="next" />
+                <NextIcon />
               </button>
             </div>
             <div className="image-slider__thumbnails">

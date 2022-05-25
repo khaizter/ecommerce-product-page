@@ -14,15 +14,13 @@
     background: none;
     padding: 0.25rem;
     cursor: pointer;
-    img {
-      display: block;
-      filter: invert(52%) sepia(58%) saturate(1809%) hue-rotate(348deg)
-        brightness(104%) contrast(101%);
-    }
+    color: $orange;
 
-    &:hover img {
-      filter: invert(75%) sepia(41%) saturate(704%) hue-rotate(322deg)
-        brightness(106%) contrast(98%);
+    &:hover {
+      color: $medium-orange;
+    }
+    svg {
+      display: block;
     }
   }
 

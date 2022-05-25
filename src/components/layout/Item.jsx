@@ -1,6 +1,7 @@
 import "../../styles/layout/Item.scss";
 import React, { useContext } from "react";
 import CartContext from "../../store/cart-context";
+import DeleteIcon from "../icon/DeleteIcon";
 
 const Item = ({ item }) => {
   const cartCtx = useContext(CartContext);
@@ -26,8 +27,9 @@ const Item = ({ item }) => {
           </span>
         </div>
       </div>
-      <button className="item__remove" onClick={removeHandler}>
-        <img src="./images/icon-delete.svg" alt="remove item" />
+      <button className="item__delete" onClick={removeHandler}>
+        {/* <img src="./images/icon-delete.svg" alt="" /> */}
+        <DeleteIcon className="item__delete-icon" />
       </button>
     </div>
   );

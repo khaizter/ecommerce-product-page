@@ -9,27 +9,91 @@
     position: relative;
     z-index: 1;
     cursor: pointer;
-    img {
-      display: block;
-      filter: invert(46%) sepia(4%) saturate(1611%) hue-rotate(178deg)
-        brightness(90%) contrast(77%);
+
+    &:hover &-icon {
+      color: $very-dark-blue;
     }
+  }
+
+  &__toggle-icon {
+    display: block;
+    color: $dark-grayish-blue;
+    transition: all 0.4s ease-out;
   }
 
   &__backdrop {
     position: fixed;
+    background-color: rgba(0, 0, 0, 0.699);
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.548);
-    height: 100%;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
+
+    &--open {
+      animation: fade-in 0.4s ease-out forwards;
+    }
+
+    &--close {
+      animation: fade-out 0.4s ease-out forwards;
+    }
   }
 
   &__overlay {
+    position: fixed;
+    top: 0;
     background-color: white;
     height: 100%;
     width: 60%;
     padding-top: 5rem;
     padding-left: 1.5rem;
+    left: 0;
+
+    &--open {
+      animation: menu-open 0.4s ease-out forwards;
+    }
+
+    &--close {
+      animation: menu-close 0.4s ease-out forwards;
+    }
+  }
+}
+
+@keyframes menu-open {
+  0% {
+    left: -60%;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes menu-close {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -60%;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }

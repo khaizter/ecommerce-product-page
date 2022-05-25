@@ -1,0 +1,22 @@
+@use "../abstracts" as *;
+
+.footer {
+  text-align: center;
+
+  &__challenge {
+    color: $dark-grayish-blue;
+    text-decoration: none;
+    &:hover {
+      color: $grayish-blue;
+    }
+  }
+
+  &__coded {
+    color: $orange;
+    text-decoration: none;
+
+    &:hover {
+      color: $medium-orange;
+    }
+  }
+}

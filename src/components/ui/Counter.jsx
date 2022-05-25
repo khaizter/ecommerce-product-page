@@ -1,5 +1,7 @@
 import "../../styles/ui/Counter.scss";
 import React from "react";
+import MinusIcon from "../icon/MinusIcon";
+import PlusIcon from "../icon/PlusIcon";
 
 const clamp = (num, min, max) => {
   return Math.min(Math.max(num, min), max);
@@ -23,11 +25,11 @@ const Counter = ({
   return (
     <div className={`counter ${className}`}>
       <button className="counter__buttons" onClick={decrementHandler}>
-        <img src="./images/icon-minus.svg" alt="" />
+        <MinusIcon />
       </button>
       <div className="counter__value">{value}</div>
       <button className="counter__buttons" onClick={incrementHandler}>
-        <img src="./images/icon-plus.svg" alt="" />
+        <PlusIcon />
       </button>
     </div>
   );

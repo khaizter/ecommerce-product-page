@@ -2,10 +2,10 @@
 
 .image-slider {
   z-index: 0;
-  max-width: 750px;
+  max-width: 46.875rem;
   margin-inline: auto;
 
-  @media (min-width: 600px) {
+  @media (min-width: 37.5em) {
     padding: 1rem;
   }
 
@@ -13,7 +13,7 @@
     position: relative;
     width: 100%;
     aspect-ratio: 1/1;
-    @media (min-width: 600px) {
+    @media (min-width: 37.5em) {
       border-radius: 12px;
     }
   }
@@ -44,36 +44,35 @@
     z-index: 0;
     cursor: pointer;
     top: calc(50% - 1.4rem);
+    color: $very-dark-blue;
 
     &:hover {
-      img {
-        filter: invert(70%) sepia(85%) saturate(3919%) hue-rotate(347deg)
-          brightness(100%) contrast(102%);
-      }
+      color: $orange;
     }
 
-    img {
+    svg {
+      display: inline;
       vertical-align: text-bottom;
     }
 
     &--previous {
       left: 1rem;
-      padding-right: 3px;
+      // padding-right: 3px;
     }
 
     &--next {
       right: 1rem;
-      padding-left: 3px;
+      // padding-left: 3px;
     }
-    @media (min-width: 600px) {
+    @media (min-width: 37.5em) {
       display: none;
 
       &--previous {
-        left: -1.5rem;
+        left: -1.4rem;
       }
 
       &--next {
-        right: -1.5rem;
+        right: -1.4rem;
       }
 
       &--light-box-mode {
@@ -87,7 +86,7 @@
     margin-top: 2rem;
     gap: 2rem;
 
-    @media (min-width: 600px) {
+    @media (min-width: 37.5em) {
       display: flex;
     }
   }
@@ -100,6 +99,7 @@
     border: none;
     cursor: pointer;
     border: 3px solid transparent;
+    transition: all 0.3s ease-out;
 
     img {
       width: 100%;
@@ -128,7 +128,7 @@
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    width: min(40%, 650px);
+    width: clamp(34.375rem, 40%, 40.625rem);
     margin-inline: auto;
   }
 
@@ -146,6 +146,11 @@
       width: 100%;
       filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(330deg)
         brightness(104%) contrast(104%);
+    }
+
+    &:hover img {
+      filter: invert(52%) sepia(58%) saturate(1809%) hue-rotate(348deg)
+        brightness(104%) contrast(101%);
     }
   }
 }

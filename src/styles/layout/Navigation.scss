@@ -17,19 +17,30 @@
     position: relative;
 
     &:hover {
-      color: $very-dark-blue;
+      color: $grayish-blue;
     }
 
-    @media (min-width: 1000px) {
-      &:hover::after {
+    @media (min-width: 62.5em) {
+      &:hover {
+        color: $very-dark-blue;
+      }
+
+      &::after {
         position: absolute;
         content: "";
         width: 100%;
-        height: 4px;
         // 2rem for paddings,16px - height of header right , 4px - height of bar
-        top: calc(100% + 2rem + 16px - 4px);
+        top: calc(100% + 2rem + 1rem - 4px);
         left: 0;
         background-color: $orange;
+        transition: all 0.3s ease-out;
+        transform: translateY(4px);
+        height: 0px;
+      }
+
+      &:hover::after {
+        transform: translateY(0);
+        height: 4px;
       }
     }
   }

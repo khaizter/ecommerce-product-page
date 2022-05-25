@@ -28,17 +28,20 @@
     color: $black;
   }
 
-  &__remove {
+  &__delete {
     background: none;
     border: none;
     padding: 0.25rem;
     margin-left: auto;
     cursor: pointer;
-    &:hover {
-      img {
-        filter: invert(75%) sepia(41%) saturate(704%) hue-rotate(322deg)
-          brightness(0%) contrast(98%);
-      }
+
+    &:hover &-icon {
+      color: $dark-grayish-blue;
     }
+  }
+
+  &__delete-icon {
+    display: block;
+    color: $grayish-blue;
   }
 }
