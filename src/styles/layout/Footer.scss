@@ -1,6 +1,7 @@
 @use "../abstracts" as *;
 
 .footer {
+  margin-block: 2rem;
   text-align: center;
 
   &__challenge {
