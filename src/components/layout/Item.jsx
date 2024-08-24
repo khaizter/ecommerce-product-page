@@ -28,7 +28,6 @@ const Item = ({ item }) => {
         </div>
       </div>
       <button className="item__delete" onClick={removeHandler}>
-        {/* <img src="./images/icon-delete.svg" alt="" /> */}
         <DeleteIcon className="item__delete-icon" />
       </button>
     </div>

@@ -5,6 +5,8 @@ import useWindowSize from "../../hooks/useWindowSize";
 import PreviousIcon from "../icon/PreviousIcon";
 import NextIcon from "../icon/NextIcon";
 
+import iconClose from "../../assets/icon-close.svg";
+
 const ImageSlider = ({ slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showLightBox, setShowLightBox] = useState(false);
@@ -93,7 +95,7 @@ const ImageSlider = ({ slides }) => {
             onClick={hideLightBoxHandler}
             className="image-slider__light-box-toggle"
           >
-            <img src="./images/icon-close.svg" alt="" />
+            <img src={iconClose} alt="" />
           </button>
           <div className="image-slider">
             <div className="image-slider__slider" onClick={showLightBoxHandler}>

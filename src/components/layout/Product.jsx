@@ -5,30 +5,38 @@ import Button from "../ui/Button";
 import CartContext from "../../store/cart-context";
 import ImageSlider from "../ui/ImageSlider";
 import CartIcon from "../icon/CartIcon";
+import imageProduct1 from "../../assets/image-product-1.jpg";
+import imageProduct2 from "../../assets/image-product-2.jpg";
+import imageProduct3 from "../../assets/image-product-3.jpg";
+import imageProduct4 from "../../assets/image-product-4.jpg";
+import imageProductThumbnail1 from "../../assets/image-product-1-thumbnail.jpg";
+import imageProductThumbnail2 from "../../assets/image-product-2-thumbnail.jpg";
+import imageProductThumbnail3 from "../../assets/image-product-3-thumbnail.jpg";
+import imageProductThumbnail4 from "../../assets/image-product-4-thumbnail.jpg";
 
 const DUMMY_SLIDES = [
   {
     id: 1,
-    imagePath: "./images/image-product-1.jpg",
-    thumbnailPath: "./images/image-product-1-thumbnail.jpg",
+    imagePath: imageProduct1,
+    thumbnailPath: imageProductThumbnail1,
     alt: "product 1",
   },
   {
     id: 2,
-    imagePath: "./images/image-product-2.jpg",
-    thumbnailPath: "./images/image-product-2-thumbnail.jpg",
+    imagePath: imageProduct2,
+    thumbnailPath: imageProductThumbnail2,
     alt: "product 2",
   },
   {
     id: 3,
-    imagePath: "./images/image-product-3.jpg",
-    thumbnailPath: "./images/image-product-3-thumbnail.jpg",
+    imagePath: imageProduct3,
+    thumbnailPath: imageProductThumbnail3,
     alt: "product 3",
   },
   {
     id: 4,
-    imagePath: "./images/image-product-4.jpg",
-    thumbnailPath: "./images/image-product-4-thumbnail.jpg",
+    imagePath: imageProduct4,
+    thumbnailPath: imageProductThumbnail4,
     alt: "product 4",
   },
 ];
@@ -42,8 +50,8 @@ const initialProduct = {
   discountedPrice: 125.0,
   discount: 50,
   originalPrice: 250.0,
-  imageThumbnailPath: "./images/image-product-1-thumbnail.jpg",
-  imagePath: "./images/image-product-1.jpg",
+  imageThumbnailPath: imageProductThumbnail1,
+  imagePath: imageProduct1,
 };
 
 const Product = ({ product = initialProduct }) => {
